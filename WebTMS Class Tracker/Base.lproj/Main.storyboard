@@ -20,7 +20,7 @@
                     <navigationItem key="navigationItem" title="WebTMS Class Tracker" id="uzT-V9-gFz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rwd-eg-Y46">
                             <connections>
-                                <segue destination="pfx-V5-dB9" kind="presentation" identifier="TermStoryboard" id="1BL-QV-qTV"/>
+                                <segue destination="pfx-V5-dB9" kind="show" identifier="termStoryboard" id="1BL-QV-qTV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -51,12 +51,12 @@
                     <navigationItem key="navigationItem" title="Select A Term" id="t3q-0C-BUv"/>
                     <connections>
                         <outlet property="termsTable" destination="Efr-2h-Ajz" id="iDu-Sj-h9b"/>
-                        <segue destination="eUd-Zj-agd" kind="presentation" identifier="CollegeStoryboard" id="3O8-lZ-Npo"/>
+                        <segue destination="iuK-fC-hNf" kind="show" identifier="collegeStoryboard" id="hw6-Cr-3nh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozG-jw-cOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="285"/>
+            <point key="canvasLocation" x="2911" y="285"/>
         </scene>
         <!--Select A College-->
         <scene sceneID="aQy-mz-di1">
@@ -77,11 +77,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqs-zf-sEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4530" y="285"/>
+            <point key="canvasLocation" x="3826" y="285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ORj-ny-V5N">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sP0-Dl-2JZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dOw-iB-lN7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VCR-hl-ApX">
@@ -93,7 +94,6 @@
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="jeu-SU-bs7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sP0-Dl-2JZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="430" y="429"/>
         </scene>
@@ -114,24 +114,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0t3-Zp-jAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2099" y="285"/>
-        </scene>
-        <!--Select-->
-        <scene sceneID="bWa-d3-0JF">
-            <objects>
-                <navigationController title="Select" automaticallyAdjustsScrollViewInsets="NO" id="eUd-Zj-agd" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w6L-pB-ZyH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="iuK-fC-hNf" kind="relationship" relationship="rootViewController" id="es8-6z-bL9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KkC-c6-DbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3718" y="285"/>
         </scene>
     </scenes>
 </document>

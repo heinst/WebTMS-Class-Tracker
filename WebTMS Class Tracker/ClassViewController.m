@@ -98,12 +98,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.url = [self.urls objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"TermStoryboard" sender:self];
+    [self performSegueWithIdentifier:@"collegeStoryboard" sender:self];
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"CollegeStoryboard"])
+    if ([segue.identifier isEqualToString:@"collegeStoryboard"])
     {
         CollegeViewController *collegeViewController = segue.destinationViewController;
         collegeViewController.url = self.url;
