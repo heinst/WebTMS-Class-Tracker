@@ -11,6 +11,8 @@
 @interface ClassViewController : ViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *termNames;
+@property (strong, nonatomic) NSMutableArray *urls;
+@property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) IBOutlet UITableView *termsTable;
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37152A5465FB45587A786DFE /* libPods-WebTMS Class Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F6C6E8CE28CED28E9B15C /* libPods-WebTMS Class Tracker.a */; };
 		6947BC0119EF65F100469515 /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6947BC0019EF65F100469515 /* ClassViewController.m */; };
+		6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6962F38B19F0C7C60045E464 /* CollegeViewController.m */; };
 		69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3919EF5F4A00DC02DD /* main.m */; };
 		69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3C19EF5F4A00DC02DD /* AppDelegate.m */; };
 		69FB8A4019EF5F4A00DC02DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3F19EF5F4A00DC02DD /* ViewController.m */; };
@@ -33,7 +34,10 @@
 		27CB89A6C03930716746EBB2 /* Pods-WebTMS Class Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebTMS Class Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebTMS Class Tracker/Pods-WebTMS Class Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		6947BBFF19EF65F100469515 /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
 		6947BC0019EF65F100469515 /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
-		69FB8A3419EF5F4A00DC02DD /* WebTMS Class Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebTMS Class Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebTMS Class Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6962F38919F0C24F0045E464 /* WebTMS Class TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebTMS Class TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6962F38A19F0C7C60045E464 /* CollegeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeViewController.h; sourceTree = "<group>"; };
+		6962F38B19F0C7C60045E464 /* CollegeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeViewController.m; sourceTree = "<group>"; };
 		69FB8A3819EF5F4A00DC02DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69FB8A3919EF5F4A00DC02DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69FB8A3B19EF5F4A00DC02DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,7 +47,6 @@
 		69FB8A4219EF5F4A00DC02DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69FB8A4419EF5F4A00DC02DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		69FB8A4719EF5F4A00DC02DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		69FB8A4D19EF5F4A00DC02DD /* WebTMS Class TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebTMS Class TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FB8A5219EF5F4A00DC02DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69FB8A5319EF5F4A00DC02DD /* WebTMS_Class_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebTMS_Class_TrackerTests.m; sourceTree = "<group>"; };
 		9A5F6C6E8CE28CED28E9B15C /* libPods-WebTMS Class Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebTMS Class Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,19 +85,11 @@
 			children = (
 				69FB8A3619EF5F4A00DC02DD /* WebTMS Class Tracker */,
 				69FB8A5019EF5F4A00DC02DD /* WebTMS Class TrackerTests */,
-				69FB8A3519EF5F4A00DC02DD /* Products */,
 				1D105DE7D005E32447828E7D /* Pods */,
 				72BB421423017F38D4711B33 /* Frameworks */,
+				6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */,
+				6962F38919F0C24F0045E464 /* WebTMS Class TrackerTests.xctest */,
 			);
-			sourceTree = "<group>";
-		};
-		69FB8A3519EF5F4A00DC02DD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				69FB8A3419EF5F4A00DC02DD /* WebTMS Class Tracker.app */,
-				69FB8A4D19EF5F4A00DC02DD /* WebTMS Class TrackerTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		69FB8A3619EF5F4A00DC02DD /* WebTMS Class Tracker */ = {
@@ -106,6 +101,8 @@
 				69FB8A3F19EF5F4A00DC02DD /* ViewController.m */,
 				6947BBFF19EF65F100469515 /* ClassViewController.h */,
 				6947BC0019EF65F100469515 /* ClassViewController.m */,
+				6962F38A19F0C7C60045E464 /* CollegeViewController.h */,
+				6962F38B19F0C7C60045E464 /* CollegeViewController.m */,
 				69FB8A4119EF5F4A00DC02DD /* Main.storyboard */,
 				69FB8A4419EF5F4A00DC02DD /* Images.xcassets */,
 				69FB8A4619EF5F4A00DC02DD /* LaunchScreen.xib */,
@@ -167,7 +164,7 @@
 			);
 			name = "WebTMS Class Tracker";
 			productName = "WebTMS Class Tracker";
-			productReference = 69FB8A3419EF5F4A00DC02DD /* WebTMS Class Tracker.app */;
+			productReference = 6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		69FB8A4C19EF5F4A00DC02DD /* WebTMS Class TrackerTests */ = {
@@ -185,7 +182,7 @@
 			);
 			name = "WebTMS Class TrackerTests";
 			productName = "WebTMS Class TrackerTests";
-			productReference = 69FB8A4D19EF5F4A00DC02DD /* WebTMS Class TrackerTests.xctest */;
+			productReference = 6962F38919F0C24F0045E464 /* WebTMS Class TrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -215,7 +212,7 @@
 				Base,
 			);
 			mainGroup = 69FB8A2B19EF5F4A00DC02DD;
-			productRefGroup = 69FB8A3519EF5F4A00DC02DD /* Products */;
+			productRefGroup = 69FB8A2B19EF5F4A00DC02DD;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -287,6 +284,7 @@
 				6947BC0119EF65F100469515 /* ClassViewController.m in Sources */,
 				69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */,
 				69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */,
+				6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

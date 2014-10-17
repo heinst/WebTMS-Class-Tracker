@@ -7,6 +7,7 @@
 //
 
 #import "ClassViewController.h"
+#import "CollegeViewController.h"
 #import <HTMLReader/HTMLReader.h>
 
 @interface ClassViewController ()
@@ -29,6 +30,7 @@
     
     NSArray *nodes = [document nodesMatchingSelector:@"div"];
     self.termNames = [[NSMutableArray alloc]init];
+    self.urls = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < [nodes count]; i++)
     {
@@ -36,8 +38,13 @@
         
         if (([tempDoc.textContent containsString:@"Semester"]) || ([tempDoc.textContent containsString:@"Quarter"]))
         {
+            NSString *baseUrl = @"https://duapp2.drexel.edu";
             NSString *termNameStripped = [tempDoc.textContent stringByReplacingOccurrencesOfString:@"\\U00a0" withString:@""];
+            HTMLElement *aElem = [tempDoc firstNodeMatchingSelector:@"a"];
+            NSString *url = [NSString stringWithFormat:@"%@%@", baseUrl, [aElem objectForKeyedSubscript:@"href"]];
+            
             [self.termNames addObject:termNameStripped];
+            [self.urls addObject:url];
         }
     }
     
@@ -78,14 +85,29 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
     cell.textLabel.text = [self.termNames objectAtIndex:indexPath.row];
-    return cell;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.url = [self.urls objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"TermStoryboard" sender:self];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"CollegeStoryboard"])
+    {
+        CollegeViewController *collegeViewController = segue.destinationViewController;
+        collegeViewController.url = self.url;
+    }
 }
 
 @end
