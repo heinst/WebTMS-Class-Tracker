@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		37152A5465FB45587A786DFE /* libPods-WebTMS Class Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F6C6E8CE28CED28E9B15C /* libPods-WebTMS Class Tracker.a */; };
-		6947BC0119EF65F100469515 /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6947BC0019EF65F100469515 /* ClassViewController.m */; };
+		6914E20319F23B3B00EC3FB7 /* SubjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */; };
+		6914E20619F2448F00EC3FB7 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914E20519F2448F00EC3FB7 /* CoursesViewController.m */; };
+		6947BC0119EF65F100469515 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6947BC0019EF65F100469515 /* TermsViewController.m */; };
 		6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6962F38B19F0C7C60045E464 /* CollegeViewController.m */; };
 		69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3919EF5F4A00DC02DD /* main.m */; };
 		69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3C19EF5F4A00DC02DD /* AppDelegate.m */; };
@@ -32,8 +34,12 @@
 /* Begin PBXFileReference section */
 		1D79B797EF9F3076FFE1B4DA /* Pods-WebTMS Class Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebTMS Class Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebTMS Class Tracker/Pods-WebTMS Class Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		27CB89A6C03930716746EBB2 /* Pods-WebTMS Class Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebTMS Class Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebTMS Class Tracker/Pods-WebTMS Class Tracker.debug.xcconfig"; sourceTree = "<group>"; };
-		6947BBFF19EF65F100469515 /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
-		6947BC0019EF65F100469515 /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
+		6914E20119F23B3B00EC3FB7 /* SubjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectsViewController.h; sourceTree = "<group>"; };
+		6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectsViewController.m; sourceTree = "<group>"; };
+		6914E20419F2448F00EC3FB7 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
+		6914E20519F2448F00EC3FB7 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
+		6947BBFF19EF65F100469515 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
+		6947BC0019EF65F100469515 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
 		6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebTMS Class Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6962F38919F0C24F0045E464 /* WebTMS Class TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebTMS Class TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6962F38A19F0C7C60045E464 /* CollegeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeViewController.h; sourceTree = "<group>"; };
@@ -99,11 +105,15 @@
 				69FB8A3C19EF5F4A00DC02DD /* AppDelegate.m */,
 				69FB8A3E19EF5F4A00DC02DD /* ViewController.h */,
 				69FB8A3F19EF5F4A00DC02DD /* ViewController.m */,
-				6947BBFF19EF65F100469515 /* ClassViewController.h */,
-				6947BC0019EF65F100469515 /* ClassViewController.m */,
+				6947BBFF19EF65F100469515 /* TermsViewController.h */,
+				6947BC0019EF65F100469515 /* TermsViewController.m */,
 				6962F38A19F0C7C60045E464 /* CollegeViewController.h */,
 				6962F38B19F0C7C60045E464 /* CollegeViewController.m */,
 				69FB8A4119EF5F4A00DC02DD /* Main.storyboard */,
+				6914E20419F2448F00EC3FB7 /* CoursesViewController.h */,
+				6914E20519F2448F00EC3FB7 /* CoursesViewController.m */,
+				6914E20119F23B3B00EC3FB7 /* SubjectsViewController.h */,
+				6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */,
 				69FB8A4419EF5F4A00DC02DD /* Images.xcassets */,
 				69FB8A4619EF5F4A00DC02DD /* LaunchScreen.xib */,
 				69FB8A3719EF5F4A00DC02DD /* Supporting Files */,
@@ -281,10 +291,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				69FB8A4019EF5F4A00DC02DD /* ViewController.m in Sources */,
-				6947BC0119EF65F100469515 /* ClassViewController.m in Sources */,
+				6914E20619F2448F00EC3FB7 /* CoursesViewController.m in Sources */,
+				6947BC0119EF65F100469515 /* TermsViewController.m in Sources */,
 				69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */,
 				69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */,
 				6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */,
+				6914E20319F23B3B00EC3FB7 /* SubjectsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

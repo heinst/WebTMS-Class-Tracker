@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
-@interface CollegeViewController : ViewController
+@interface CollegeViewController : ViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *collegeTable;
 @property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSMutableArray *collegeNames;
+@property (strong, nonatomic) NSMutableArray *urls;
 @end

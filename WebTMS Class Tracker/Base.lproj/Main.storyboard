@@ -15,6 +15,12 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="j1a-49-cZ8">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="WebTMS Class Tracker" id="uzT-V9-gFz">
@@ -29,7 +35,7 @@
             </objects>
             <point key="canvasLocation" x="1252" y="429"/>
         </scene>
-        <!--Select A Term-->
+        <!--Terms-->
         <scene sceneID="ikG-ct-f16">
             <objects>
                 <viewController id="DqH-Lf-xj8" customClass="ClassViewController" sceneMemberID="viewController">
@@ -48,7 +54,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select A Term" id="t3q-0C-BUv"/>
+                    <navigationItem key="navigationItem" title="Terms" id="t3q-0C-BUv"/>
                     <connections>
                         <outlet property="termsTable" destination="Efr-2h-Ajz" id="iDu-Sj-h9b"/>
                         <segue destination="iuK-fC-hNf" kind="show" identifier="collegeStoryboard" id="hw6-Cr-3nh"/>
@@ -58,7 +64,7 @@
             </objects>
             <point key="canvasLocation" x="2911" y="285"/>
         </scene>
-        <!--Select A College-->
+        <!--Colleges-->
         <scene sceneID="aQy-mz-di1">
             <objects>
                 <viewController storyboardIdentifier="CollegeStoryBoard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iuK-fC-hNf" customClass="CollegeViewController" sceneMemberID="viewController">
@@ -69,20 +75,82 @@
                     <view key="view" contentMode="scaleToFill" id="7Uv-52-zus">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hlq-t2-0b7">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select A College" id="PzD-Hn-4SM">
-                        <barButtonItem key="backBarButtonItem" title="Terms" id="ZJ9-lK-x78"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Colleges" id="PzD-Hn-4SM"/>
+                    <connections>
+                        <outlet property="collegeTable" destination="Hlq-t2-0b7" id="sLi-Pe-6BL"/>
+                        <segue destination="bIH-pX-3nV" kind="show" identifier="subjectStoryboard" id="XVe-4X-7KX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqs-zf-sEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3826" y="285"/>
+            <point key="canvasLocation" x="3804" y="285"/>
+        </scene>
+        <!--Subjects-->
+        <scene sceneID="rJD-uW-yHz">
+            <objects>
+                <viewController title="Subjects" id="bIH-pX-3nV" customClass="SubjectsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X9k-fl-9xJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xwH-a9-kUD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mMc-Ze-9se">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="g6U-cJ-Sfv">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="subjectTable" destination="g6U-cJ-Sfv" id="Y7j-GW-yvL"/>
+                        <segue destination="6eK-2j-Kra" kind="show" identifier="coursesStoryboard" id="23H-8z-cDH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iav-kd-GQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4518" y="285"/>
+        </scene>
+        <!--Courses View Controller-->
+        <scene sceneID="2Wt-Hw-7PU">
+            <objects>
+                <viewController id="6eK-2j-Kra" customClass="CoursesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y7F-ZE-qGa"/>
+                        <viewControllerLayoutGuide type="bottom" id="v6j-Qo-9El"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q1w-IU-LUA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5ar-wB-9DL">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="courseTable" destination="5ar-wB-9DL" id="LZ2-Zh-jL1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OX0-Hu-EIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5260" y="285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ORj-ny-V5N">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sP0-Dl-2JZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dOw-iB-lN7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VCR-hl-ApX">
@@ -94,6 +162,7 @@
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="jeu-SU-bs7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sP0-Dl-2JZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="430" y="429"/>
         </scene>
@@ -113,7 +182,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0t3-Zp-jAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2099" y="285"/>
+            <point key="canvasLocation" x="2067" y="285"/>
         </scene>
     </scenes>
 </document>

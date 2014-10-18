@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Trevor Heins. All rights reserved.
 //
 
-#import "ClassViewController.h"
+#import "TermsViewController.h"
 #import "CollegeViewController.h"
 #import <HTMLReader/HTMLReader.h>
 
@@ -31,6 +31,7 @@
     NSArray *nodes = [document nodesMatchingSelector:@"div"];
     self.termNames = [[NSMutableArray alloc]init];
     self.urls = [[NSMutableArray alloc] init];
+    NSString *baseUrl = @"https://duapp2.drexel.edu";
     
     for (int i = 0; i < [nodes count]; i++)
     {
@@ -38,7 +39,7 @@
         
         if (([tempDoc.textContent containsString:@"Semester"]) || ([tempDoc.textContent containsString:@"Quarter"]))
         {
-            NSString *baseUrl = @"https://duapp2.drexel.edu";
+            
             NSString *termNameStripped = [tempDoc.textContent stringByReplacingOccurrencesOfString:@"\\U00a0" withString:@""];
             HTMLElement *aElem = [tempDoc firstNodeMatchingSelector:@"a"];
             NSString *url = [NSString stringWithFormat:@"%@%@", baseUrl, [aElem objectForKeyedSubscript:@"href"]];
@@ -89,6 +90,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
+
     
     cell.textLabel.text = [self.termNames objectAtIndex:indexPath.row];
     
@@ -107,6 +109,7 @@
     {
         CollegeViewController *collegeViewController = segue.destinationViewController;
         collegeViewController.url = self.url;
+        NSLog(@"%@", self.url);
     }
 }
 

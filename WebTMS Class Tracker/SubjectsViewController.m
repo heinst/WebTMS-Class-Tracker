@@ -1,36 +1,37 @@
 //
-//  CollegeViewController.m
+//  SubjectsViewController.m
 //  WebTMS Class Tracker
 //
-//  Created by Trevor Heins on 10/16/14.
+//  Created by Trevor Heins on 10/18/14.
 //  Copyright (c) 2014 Trevor Heins. All rights reserved.
 //
 
-#import "CollegeViewController.h"
-#import <HTMLReader/HTMLReader.h>
 #import "SubjectsViewController.h"
+#import <HTMLReader/HTMLReader.h>
+#import "CoursesViewController.h"
 
-@interface CollegeViewController ()
+@interface SubjectsViewController ()
 
 @end
 
-@implementation CollegeViewController
+@implementation SubjectsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.collegeTable setDelegate:self];
-    [self.collegeTable setDataSource:self];
+    [self.subjectTable setDelegate:self];
+    [self.subjectTable setDataSource:self];
     
     NSURL *url = [NSURL URLWithString:self.url];
+    NSLog(@"%@", self.url);
     NSString *webData= [NSString stringWithContentsOfURL:url];
     
     HTMLDocument *document = [HTMLDocument documentWithString:webData];
     
     NSArray *nodes = [document nodesMatchingSelector:@"div"];
-    self.collegeNames = [[NSMutableArray alloc]init];
+    self.subjectNames = [[NSMutableArray alloc]init];
     self.urls = [[NSMutableArray alloc] init];
     NSString *baseUrl = @"https://duapp2.drexel.edu";
     
@@ -40,24 +41,19 @@
         HTMLElement *tempElem = [tempDoc firstNodeMatchingSelector:@"div"];
         
         
-        if ([[tempElem objectForKeyedSubscript:@"id"]  isEqual:@"sideLeft"])
+        if (([[tempElem objectForKeyedSubscript:@"class"]  isEqual:@"even"] || [[tempElem objectForKeyedSubscript:@"class"]  isEqual:@"odd"]))
         {
             
-            NSArray *aNodes = [tempDoc nodesMatchingSelector:@"a"];
-            for (int j = 0; j < [aNodes count]; j++)
-            {
-                HTMLDocument *tempDoc2 = [aNodes objectAtIndex:j];
-                NSString *collegeNameStripped = [tempDoc2.textContent stringByReplacingOccurrencesOfString:@"\\U00a0" withString:@""];
-                HTMLElement *aElem = [tempDoc2 firstNodeMatchingSelector:@"a"];
-                NSString *url = [NSString stringWithFormat:@"%@%@", baseUrl, [aElem objectForKeyedSubscript:@"href"]];
-            
-                [self.collegeNames addObject:collegeNameStripped];
-                [self.urls addObject:url];
-            }
+            NSString *subjectNameStripped = [tempDoc.textContent stringByReplacingOccurrencesOfString:@"\\U00a0" withString:@""];
+            HTMLElement *aElem = [tempDoc firstNodeMatchingSelector:@"a"];
+            NSString *url = [NSString stringWithFormat:@"%@%@", baseUrl, [aElem objectForKeyedSubscript:@"href"]];
+                
+            [self.subjectNames addObject:subjectNameStripped];
+            [self.urls addObject:url];
         }
     }
     
-    [self.collegeTable reloadData];
+    [self.subjectTable reloadData];
 }
 
 
@@ -67,14 +63,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -85,7 +81,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.collegeNames count];
+    return [self.subjectNames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:  (NSIndexPath *)indexPath
@@ -99,7 +95,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [self.collegeNames objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.subjectNames objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -107,17 +103,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.url = [self.urls objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"subjectStoryboard" sender:self];
+    [self performSegueWithIdentifier:@"coursesStoryboard" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"subjectStoryboard"])
+    if ([segue.identifier isEqualToString:@"coursesStoryboard"])
     {
-        SubjectsViewController  *subjectViewController = segue.destinationViewController;
-        subjectViewController.url = self.url;
+        CoursesViewController  *coursesViewController = segue.destinationViewController;
+        coursesViewController.url = self.url;
     }
     
 }
-
 @end
