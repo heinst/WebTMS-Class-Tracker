@@ -10,6 +10,7 @@
 		37152A5465FB45587A786DFE /* libPods-WebTMS Class Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F6C6E8CE28CED28E9B15C /* libPods-WebTMS Class Tracker.a */; };
 		6914E20319F23B3B00EC3FB7 /* SubjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */; };
 		6914E20619F2448F00EC3FB7 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914E20519F2448F00EC3FB7 /* CoursesViewController.m */; };
+		6920D2351A0125FC006B47A8 /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6920D2341A0125FC006B47A8 /* SectionsViewController.m */; };
 		6947BC0119EF65F100469515 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6947BC0019EF65F100469515 /* TermsViewController.m */; };
 		6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6962F38B19F0C7C60045E464 /* CollegeViewController.m */; };
 		69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3919EF5F4A00DC02DD /* main.m */; };
@@ -38,6 +39,8 @@
 		6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectsViewController.m; sourceTree = "<group>"; };
 		6914E20419F2448F00EC3FB7 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
 		6914E20519F2448F00EC3FB7 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
+		6920D2331A0125FC006B47A8 /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
+		6920D2341A0125FC006B47A8 /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
 		6947BBFF19EF65F100469515 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
 		6947BC0019EF65F100469515 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
 		6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebTMS Class Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +120,8 @@
 				69FB8A4419EF5F4A00DC02DD /* Images.xcassets */,
 				69FB8A4619EF5F4A00DC02DD /* LaunchScreen.xib */,
 				69FB8A3719EF5F4A00DC02DD /* Supporting Files */,
+				6920D2331A0125FC006B47A8 /* SectionsViewController.h */,
+				6920D2341A0125FC006B47A8 /* SectionsViewController.m */,
 			);
 			path = "WebTMS Class Tracker";
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			files = (
 				69FB8A4019EF5F4A00DC02DD /* ViewController.m in Sources */,
 				6914E20619F2448F00EC3FB7 /* CoursesViewController.m in Sources */,
+				6920D2351A0125FC006B47A8 /* SectionsViewController.m in Sources */,
 				6947BC0119EF65F100469515 /* TermsViewController.m in Sources */,
 				69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */,
 				69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */,

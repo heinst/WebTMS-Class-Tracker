@@ -11,6 +11,7 @@
 @interface CoursesViewController : ViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *courseTable;
 @property (strong, nonatomic) NSString *url;
+@property (strong, nonatomic) NSString *sectionChosen;
 @property (strong, nonatomic) NSString *course;
 @property (strong, nonatomic) NSString *courseNum;
 @property (strong, nonatomic) NSString *courseType;

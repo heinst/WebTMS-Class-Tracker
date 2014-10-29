@@ -25,7 +25,6 @@
     [self.subjectTable setDataSource:self];
     
     NSURL *url = [NSURL URLWithString:self.url];
-    NSLog(@"%@", self.url);
     NSString *webData= [NSString stringWithContentsOfURL:url];
     
     HTMLDocument *document = [HTMLDocument documentWithString:webData];

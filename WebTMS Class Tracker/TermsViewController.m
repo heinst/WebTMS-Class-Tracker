@@ -109,7 +109,6 @@
     {
         CollegeViewController *collegeViewController = segue.destinationViewController;
         collegeViewController.url = self.url;
-        NSLog(@"%@", self.url);
     }
 }
 

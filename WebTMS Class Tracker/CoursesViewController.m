@@ -8,6 +8,7 @@
 
 #import "CoursesViewController.h"
 #import <HTMLReader/HTMLReader.h>
+#import "SectionsViewController.h"
 
 @interface CoursesViewController ()
 
@@ -22,9 +23,9 @@
     
     [self.courseTable setDelegate:self];
     [self.courseTable setDataSource:self];
+    self.title = @"Courses";
     
     NSURL *url = [NSURL URLWithString:self.url];
-    NSLog(@"%@", self.url);
     NSString *webData= [NSString stringWithContentsOfURL:url];
     
     HTMLDocument *document = [HTMLDocument documentWithString:webData];
@@ -32,7 +33,8 @@
     NSArray *nodes = [document nodesMatchingSelector:@"tr"];
     self.courseNames = [[NSMutableArray alloc]init];
     self.urls = [[NSMutableArray alloc] init];
-    NSString *baseUrl = @"https://duapp2.drexel.edu";
+    //NSString *baseUrl = @"https://duapp2.drexel.edu";
+    
     
     for (int i = 0; i < [nodes count]; i++)
     {
@@ -44,20 +46,34 @@
         {
             
             NSArray *tdNodes = [tempDoc nodesMatchingSelector:@"td"];
-            for (int j = 0; j < [tdNodes count]; j++)
+            NSString *courseName;
+            NSString *courseNum;
+            for (int j = 0; j < 2; j++)
             {
                 HTMLDocument *tempDoc2 = [tdNodes objectAtIndex:j];
-                NSString *collegeNameStripped = [tempDoc2.textContent stringByReplacingOccurrencesOfString:@"\\U00a0" withString:@""];
-                HTMLElement *aElem = [tempDoc2 firstNodeMatchingSelector:@"a"];
-                NSString *url = [NSString stringWithFormat:@"%@%@", baseUrl, [aElem objectForKeyedSubscript:@"href"]];
+                if (j == 0)
+                {
+                    courseName = [tempDoc2.textContent stringByReplacingOccurrencesOfString:@"\\U00a0" withString:@""];
+                }
+                else
+                {
+                    courseNum = [tempDoc2.textContent stringByReplacingOccurrencesOfString:@"\\U00a0" withString:@""];
+                }
                 
-                [self.courseNames addObject:collegeNameStripped];
-                [self.urls addObject:url];
+            }
+            NSString * courseNameNum = [NSString stringWithFormat:@"%@ %@", courseName, courseNum];
+            if (![self.courseNames containsObject:courseNameNum])
+            {
+                
+                if (!(([courseNameNum containsString:@"am"]) || ([courseNameNum containsString:@"pm"]) || ([courseNameNum containsString:@"TBD"])))
+                {
+                    [self.courseNames addObject:courseNameNum];
+                }
             }
         }
         
+        
     }
-    
     [self.courseTable reloadData];
 }
 
@@ -107,16 +123,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.url = [self.urls objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"coursesStoryboard" sender:self];
+    //self.url = [self.urls objectAtIndex:indexPath.row];
+    self.sectionChosen = [self.courseNames objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:@"sectionsStoryboard" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"coursesStoryboard"])
+    if ([segue.identifier isEqualToString:@"sectionsStoryboard"])
     {
-        CoursesViewController  *coursesViewController = segue.destinationViewController;
-        coursesViewController.url = self.url;
+        SectionsViewController  *sectionsViewController = segue.destinationViewController;
+        sectionsViewController.url = self.url;
+        sectionsViewController.section = self.sectionChosen;
     }
     
 }
