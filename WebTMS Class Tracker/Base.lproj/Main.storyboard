@@ -30,6 +30,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="rwd-eg-Y46" id="mh8-RO-jNP"/>
+                        <outlet property="mainTable" destination="j1a-49-cZ8" id="JMc-10-mWl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
