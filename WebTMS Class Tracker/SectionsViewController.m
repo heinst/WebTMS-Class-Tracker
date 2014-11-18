@@ -8,6 +8,7 @@
 
 #import "SectionsViewController.h"
 #import <HTMLReader/HTMLReader.h>
+#import "ClassInfoViewController.h"
 
 @interface SectionsViewController ()
 
@@ -25,7 +26,8 @@
     self.title = @"Sections";
     
     NSURL *url = [NSURL URLWithString:self.url];
-    NSString *webData= [NSString stringWithContentsOfURL:url];
+    NSError *error = nil;
+    NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     
     HTMLDocument *document = [HTMLDocument documentWithString:webData];
     
@@ -98,14 +100,6 @@
                 
                 
             }
-            /*else if ((([courseNameNum containsString:@"am"]) || (([courseNameNum containsString:@"pm"]) || ([courseNameNum containsString:@"TBD"]))))
-            {
-                if (!([courseNameNum containsString:@"Final Exam"]))
-                {
-                    [self.times addObject:courseNameNum];
-                }
-                
-            }*/
         }
         
     }
@@ -149,10 +143,11 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:simpleTableIdentifier];
+        
     }
-
+    
     cell.textLabel.text = [self.sections objectAtIndex:indexPath.row];
-
+    
     cell.detailTextLabel.text = [self.times objectAtIndex:indexPath.row];
     
     NSString *status = [self.classStatus objectAtIndex:indexPath.row];
@@ -162,6 +157,11 @@
         cell.textLabel.textColor = [UIColor grayColor];
         cell.detailTextLabel.textColor = [UIColor grayColor];
     }
+    else
+    {
+        cell.textLabel.textColor = [UIColor blackColor];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
+    }
     
     
     return cell;
@@ -170,15 +170,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.url = [self.urls objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:@"coursesStoryboard" sender:self];
+    [self performSegueWithIdentifier:@"classInfoStoryboard" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"sectionStoryboard"])
+    if ([segue.identifier isEqualToString:@"classInfoStoryboard"])
     {
-        //CoursesViewController  *coursesViewController = segue.destinationViewController;
-        //coursesViewController.url = self.url;
+        ClassInfoViewController *classInfoViewController = segue.destinationViewController;
+        classInfoViewController.url = self.url;
+        
     }
     
 }

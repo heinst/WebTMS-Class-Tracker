@@ -24,7 +24,8 @@
     [self.termsTable setDataSource:self];
     
     NSURL *url = [NSURL URLWithString:@"https://duapp2.drexel.edu/webtms_du/app"];
-    NSString *webData= [NSString stringWithContentsOfURL:url];
+    NSError *error = nil;
+    NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     
     HTMLDocument *document = [HTMLDocument documentWithString:webData];
     

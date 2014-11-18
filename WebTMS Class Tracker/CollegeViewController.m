@@ -25,7 +25,8 @@
     [self.collegeTable setDataSource:self];
     
     NSURL *url = [NSURL URLWithString:self.url];
-    NSString *webData= [NSString stringWithContentsOfURL:url];
+    NSError *error = nil;
+    NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     
     HTMLDocument *document = [HTMLDocument documentWithString:webData];
     

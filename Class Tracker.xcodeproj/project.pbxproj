@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37152A5465FB45587A786DFE /* libPods-WebTMS Class Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A5F6C6E8CE28CED28E9B15C /* libPods-WebTMS Class Tracker.a */; };
 		6914E20319F23B3B00EC3FB7 /* SubjectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */; };
 		6914E20619F2448F00EC3FB7 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6914E20519F2448F00EC3FB7 /* CoursesViewController.m */; };
+		691DEBFC1A09881A00289141 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 691DEBFB1A09881A00289141 /* MainTableViewController.m */; };
 		6920D2351A0125FC006B47A8 /* SectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6920D2341A0125FC006B47A8 /* SectionsViewController.m */; };
+		692CD92C1A095BC800400297 /* ClassInfoMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692CD92B1A095BC800400297 /* ClassInfoMainViewController.m */; };
+		6946AF2E1A01A22E00C9B46C /* ClassInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6946AF2D1A01A22E00C9B46C /* ClassInfoViewController.m */; };
 		6947BC0119EF65F100469515 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6947BC0019EF65F100469515 /* TermsViewController.m */; };
 		6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6962F38B19F0C7C60045E464 /* CollegeViewController.m */; };
+		697D06B11A0931F000A99210 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697D06B01A0931EF00A99210 /* MainViewController.m */; };
+		697D06B61A09340C00A99210 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697D06B51A09340C00A99210 /* ViewController.m */; };
+		69C276DE1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C276DD1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a */; };
+		69C276E01A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C276DF1A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a */; };
 		69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3919EF5F4A00DC02DD /* main.m */; };
 		69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3C19EF5F4A00DC02DD /* AppDelegate.m */; };
-		69FB8A4019EF5F4A00DC02DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3F19EF5F4A00DC02DD /* ViewController.m */; };
 		69FB8A4319EF5F4A00DC02DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69FB8A4119EF5F4A00DC02DD /* Main.storyboard */; };
 		69FB8A4519EF5F4A00DC02DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69FB8A4419EF5F4A00DC02DD /* Images.xcassets */; };
-		69FB8A4819EF5F4A00DC02DD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69FB8A4619EF5F4A00DC02DD /* LaunchScreen.xib */; };
 		69FB8A5419EF5F4A00DC02DD /* WebTMS_Class_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A5319EF5F4A00DC02DD /* WebTMS_Class_TrackerTests.m */; };
 /* End PBXBuildFile section */
 
@@ -35,27 +39,40 @@
 /* Begin PBXFileReference section */
 		1D79B797EF9F3076FFE1B4DA /* Pods-WebTMS Class Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebTMS Class Tracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebTMS Class Tracker/Pods-WebTMS Class Tracker.release.xcconfig"; sourceTree = "<group>"; };
 		27CB89A6C03930716746EBB2 /* Pods-WebTMS Class Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebTMS Class Tracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebTMS Class Tracker/Pods-WebTMS Class Tracker.debug.xcconfig"; sourceTree = "<group>"; };
+		5C6A1D0FACF87CA66186EE99 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6914E20119F23B3B00EC3FB7 /* SubjectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectsViewController.h; sourceTree = "<group>"; };
 		6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectsViewController.m; sourceTree = "<group>"; };
 		6914E20419F2448F00EC3FB7 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
 		6914E20519F2448F00EC3FB7 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
+		691DEBF41A0983D700289141 /* libPods-WebTMS Class Tracker-HTMLReader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WebTMS Class Tracker-HTMLReader.a"; path = "Pods/build/Debug-iphoneos/libPods-WebTMS Class Tracker-HTMLReader.a"; sourceTree = "<group>"; };
+		691DEBF61A0983E000289141 /* libPods-WebTMS Class Tracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WebTMS Class Tracker.a"; path = "Pods/build/Debug-iphoneos/libPods-WebTMS Class Tracker.a"; sourceTree = "<group>"; };
+		691DEBF81A0983F100289141 /* libPods-WebTMS Class Tracker-HTMLReader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WebTMS Class Tracker-HTMLReader.a"; path = "Pods/build/Debug-iphoneos/libPods-WebTMS Class Tracker-HTMLReader.a"; sourceTree = "<group>"; };
+		691DEBFA1A09881A00289141 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		691DEBFB1A09881A00289141 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
 		6920D2331A0125FC006B47A8 /* SectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionsViewController.h; sourceTree = "<group>"; };
 		6920D2341A0125FC006B47A8 /* SectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionsViewController.m; sourceTree = "<group>"; };
+		692CD92A1A095BC800400297 /* ClassInfoMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfoMainViewController.h; sourceTree = "<group>"; };
+		692CD92B1A095BC800400297 /* ClassInfoMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfoMainViewController.m; sourceTree = "<group>"; };
+		6946AF2C1A01A22E00C9B46C /* ClassInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfoViewController.h; sourceTree = "<group>"; };
+		6946AF2D1A01A22E00C9B46C /* ClassInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfoViewController.m; sourceTree = "<group>"; };
 		6947BBFF19EF65F100469515 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
 		6947BC0019EF65F100469515 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
-		6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebTMS Class Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6962F38919F0C24F0045E464 /* WebTMS Class TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebTMS Class TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6962F38819F0C24F0045E464 /* Class Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Class Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6962F38919F0C24F0045E464 /* Class TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Class TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6962F38A19F0C7C60045E464 /* CollegeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeViewController.h; sourceTree = "<group>"; };
 		6962F38B19F0C7C60045E464 /* CollegeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeViewController.m; sourceTree = "<group>"; };
+		697D06AF1A0931EF00A99210 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		697D06B01A0931EF00A99210 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		697D06B51A09340C00A99210 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		697D06B71A09341300A99210 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		69C276DD1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WebTMS Class Tracker-HTMLReader.a"; path = "Pods/build/Debug-iphoneos/libPods-WebTMS Class Tracker-HTMLReader.a"; sourceTree = "<group>"; };
+		69C276DF1A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WebTMS Class Tracker.a"; path = "Pods/build/Debug-iphoneos/libPods-WebTMS Class Tracker.a"; sourceTree = "<group>"; };
 		69FB8A3819EF5F4A00DC02DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69FB8A3919EF5F4A00DC02DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		69FB8A3B19EF5F4A00DC02DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69FB8A3C19EF5F4A00DC02DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		69FB8A3E19EF5F4A00DC02DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		69FB8A3F19EF5F4A00DC02DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		69FB8A4219EF5F4A00DC02DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69FB8A4419EF5F4A00DC02DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		69FB8A4719EF5F4A00DC02DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		69FB8A5219EF5F4A00DC02DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69FB8A5319EF5F4A00DC02DD /* WebTMS_Class_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebTMS_Class_TrackerTests.m; sourceTree = "<group>"; };
 		9A5F6C6E8CE28CED28E9B15C /* libPods-WebTMS Class Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebTMS Class Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37152A5465FB45587A786DFE /* libPods-WebTMS Class Tracker.a in Frameworks */,
+				69C276E01A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a in Frameworks */,
+				69C276DE1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,8 +114,8 @@
 				69FB8A5019EF5F4A00DC02DD /* WebTMS Class TrackerTests */,
 				1D105DE7D005E32447828E7D /* Pods */,
 				72BB421423017F38D4711B33 /* Frameworks */,
-				6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */,
-				6962F38919F0C24F0045E464 /* WebTMS Class TrackerTests.xctest */,
+				6962F38819F0C24F0045E464 /* Class Tracker.app */,
+				6962F38919F0C24F0045E464 /* Class TrackerTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,22 +124,29 @@
 			children = (
 				69FB8A3B19EF5F4A00DC02DD /* AppDelegate.h */,
 				69FB8A3C19EF5F4A00DC02DD /* AppDelegate.m */,
-				69FB8A3E19EF5F4A00DC02DD /* ViewController.h */,
-				69FB8A3F19EF5F4A00DC02DD /* ViewController.m */,
+				697D06AF1A0931EF00A99210 /* MainViewController.h */,
+				697D06B01A0931EF00A99210 /* MainViewController.m */,
 				6947BBFF19EF65F100469515 /* TermsViewController.h */,
 				6947BC0019EF65F100469515 /* TermsViewController.m */,
 				6962F38A19F0C7C60045E464 /* CollegeViewController.h */,
 				6962F38B19F0C7C60045E464 /* CollegeViewController.m */,
 				69FB8A4119EF5F4A00DC02DD /* Main.storyboard */,
+				691DEBFA1A09881A00289141 /* MainTableViewController.h */,
+				691DEBFB1A09881A00289141 /* MainTableViewController.m */,
+				6946AF2C1A01A22E00C9B46C /* ClassInfoViewController.h */,
+				6946AF2D1A01A22E00C9B46C /* ClassInfoViewController.m */,
+				692CD92A1A095BC800400297 /* ClassInfoMainViewController.h */,
+				692CD92B1A095BC800400297 /* ClassInfoMainViewController.m */,
 				6914E20419F2448F00EC3FB7 /* CoursesViewController.h */,
 				6914E20519F2448F00EC3FB7 /* CoursesViewController.m */,
 				6914E20119F23B3B00EC3FB7 /* SubjectsViewController.h */,
 				6914E20219F23B3B00EC3FB7 /* SubjectsViewController.m */,
 				69FB8A4419EF5F4A00DC02DD /* Images.xcassets */,
-				69FB8A4619EF5F4A00DC02DD /* LaunchScreen.xib */,
 				69FB8A3719EF5F4A00DC02DD /* Supporting Files */,
 				6920D2331A0125FC006B47A8 /* SectionsViewController.h */,
 				6920D2341A0125FC006B47A8 /* SectionsViewController.m */,
+				697D06B71A09341300A99210 /* ViewController.h */,
+				697D06B51A09340C00A99210 /* ViewController.m */,
 			);
 			path = "WebTMS Class Tracker";
 			sourceTree = "<group>";
@@ -155,7 +180,13 @@
 		72BB421423017F38D4711B33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69C276DF1A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a */,
+				69C276DD1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a */,
+				691DEBF81A0983F100289141 /* libPods-WebTMS Class Tracker-HTMLReader.a */,
+				691DEBF61A0983E000289141 /* libPods-WebTMS Class Tracker.a */,
+				691DEBF41A0983D700289141 /* libPods-WebTMS Class Tracker-HTMLReader.a */,
 				9A5F6C6E8CE28CED28E9B15C /* libPods-WebTMS Class Tracker.a */,
+				5C6A1D0FACF87CA66186EE99 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		69FB8A3319EF5F4A00DC02DD /* WebTMS Class Tracker */ = {
+		69FB8A3319EF5F4A00DC02DD /* Class Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69FB8A5719EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "WebTMS Class Tracker" */;
+			buildConfigurationList = 69FB8A5719EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "Class Tracker" */;
 			buildPhases = (
 				CEE5EFD28823BDB566269DD5 /* Check Pods Manifest.lock */,
 				69FB8A3019EF5F4A00DC02DD /* Sources */,
@@ -177,14 +208,14 @@
 			);
 			dependencies = (
 			);
-			name = "WebTMS Class Tracker";
+			name = "Class Tracker";
 			productName = "WebTMS Class Tracker";
-			productReference = 6962F38819F0C24F0045E464 /* WebTMS Class Tracker.app */;
+			productReference = 6962F38819F0C24F0045E464 /* Class Tracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		69FB8A4C19EF5F4A00DC02DD /* WebTMS Class TrackerTests */ = {
+		69FB8A4C19EF5F4A00DC02DD /* Class TrackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69FB8A5A19EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "WebTMS Class TrackerTests" */;
+			buildConfigurationList = 69FB8A5A19EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "Class TrackerTests" */;
 			buildPhases = (
 				69FB8A4919EF5F4A00DC02DD /* Sources */,
 				69FB8A4A19EF5F4A00DC02DD /* Frameworks */,
@@ -195,9 +226,9 @@
 			dependencies = (
 				69FB8A4F19EF5F4A00DC02DD /* PBXTargetDependency */,
 			);
-			name = "WebTMS Class TrackerTests";
+			name = "Class TrackerTests";
 			productName = "WebTMS Class TrackerTests";
-			productReference = 6962F38919F0C24F0045E464 /* WebTMS Class TrackerTests.xctest */;
+			productReference = 6962F38919F0C24F0045E464 /* Class TrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -211,6 +242,7 @@
 				TargetAttributes = {
 					69FB8A3319EF5F4A00DC02DD = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = NNUZNQ6Y6U;
 					};
 					69FB8A4C19EF5F4A00DC02DD = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -218,7 +250,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 69FB8A2F19EF5F4A00DC02DD /* Build configuration list for PBXProject "WebTMS Class Tracker" */;
+			buildConfigurationList = 69FB8A2F19EF5F4A00DC02DD /* Build configuration list for PBXProject "Class Tracker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,8 +263,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				69FB8A3319EF5F4A00DC02DD /* WebTMS Class Tracker */,
-				69FB8A4C19EF5F4A00DC02DD /* WebTMS Class TrackerTests */,
+				69FB8A3319EF5F4A00DC02DD /* Class Tracker */,
+				69FB8A4C19EF5F4A00DC02DD /* Class TrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				69FB8A4319EF5F4A00DC02DD /* Main.storyboard in Resources */,
-				69FB8A4819EF5F4A00DC02DD /* LaunchScreen.xib in Resources */,
 				69FB8A4519EF5F4A00DC02DD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,13 +326,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69FB8A4019EF5F4A00DC02DD /* ViewController.m in Sources */,
 				6914E20619F2448F00EC3FB7 /* CoursesViewController.m in Sources */,
 				6920D2351A0125FC006B47A8 /* SectionsViewController.m in Sources */,
+				697D06B11A0931F000A99210 /* MainViewController.m in Sources */,
 				6947BC0119EF65F100469515 /* TermsViewController.m in Sources */,
+				697D06B61A09340C00A99210 /* ViewController.m in Sources */,
 				69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */,
 				69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */,
+				692CD92C1A095BC800400297 /* ClassInfoMainViewController.m in Sources */,
+				691DEBFC1A09881A00289141 /* MainTableViewController.m in Sources */,
 				6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */,
+				6946AF2E1A01A22E00C9B46C /* ClassInfoViewController.m in Sources */,
 				6914E20319F23B3B00EC3FB7 /* SubjectsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +354,7 @@
 /* Begin PBXTargetDependency section */
 		69FB8A4F19EF5F4A00DC02DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 69FB8A3319EF5F4A00DC02DD /* WebTMS Class Tracker */;
+			target = 69FB8A3319EF5F4A00DC02DD /* Class Tracker */;
 			targetProxy = 69FB8A4E19EF5F4A00DC02DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -331,14 +366,6 @@
 				69FB8A4219EF5F4A00DC02DD /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		69FB8A4619EF5F4A00DC02DD /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				69FB8A4719EF5F4A00DC02DD /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -425,9 +452,16 @@
 			baseConfigurationReference = 27CB89A6C03930716746EBB2 /* Pods-WebTMS Class Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WebTMS Class Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "Class Tracker";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -436,9 +470,16 @@
 			baseConfigurationReference = 1D79B797EF9F3076FFE1B4DA /* Pods-WebTMS Class Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WebTMS Class Tracker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "Class Tracker";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -456,7 +497,7 @@
 				);
 				INFOPLIST_FILE = "WebTMS Class TrackerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Class TrackerTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebTMS Class Tracker.app/WebTMS Class Tracker";
 			};
 			name = Debug;
@@ -471,7 +512,7 @@
 				);
 				INFOPLIST_FILE = "WebTMS Class TrackerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Class TrackerTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebTMS Class Tracker.app/WebTMS Class Tracker";
 			};
 			name = Release;
@@ -479,7 +520,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		69FB8A2F19EF5F4A00DC02DD /* Build configuration list for PBXProject "WebTMS Class Tracker" */ = {
+		69FB8A2F19EF5F4A00DC02DD /* Build configuration list for PBXProject "Class Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69FB8A5519EF5F4A00DC02DD /* Debug */,
@@ -488,7 +529,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69FB8A5719EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "WebTMS Class Tracker" */ = {
+		69FB8A5719EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "Class Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69FB8A5819EF5F4A00DC02DD /* Debug */,
@@ -497,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69FB8A5A19EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "WebTMS Class TrackerTests" */ = {
+		69FB8A5A19EF5F4A00DC02DD /* Build configuration list for PBXNativeTarget "Class TrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				69FB8A5B19EF5F4A00DC02DD /* Debug */,

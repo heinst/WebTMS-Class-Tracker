@@ -1,10 +1,10 @@
 PODS:
-  - HTMLReader (0.5.7)
+  - HTMLReader (0.5.8)
 
 DEPENDENCIES:
   - HTMLReader
 
 SPEC CHECKSUMS:
-  HTMLReader: b0ec38f7ce46670333a8aa6b90d516511caf7d34
+  HTMLReader: e61b43d69deb09d8098a7aabacdd6cafd8749373
 
-COCOAPODS: 0.34.2
+COCOAPODS: 0.35.0.rc2
