@@ -21,8 +21,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height - 64;
+    
+    self.courseTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 64.0, screenWidth, screenHeight) style:UITableViewStylePlain];
+    
     [self.courseTable setDelegate:self];
     [self.courseTable setDataSource:self];
+    
+    [self.view addSubview:self.courseTable];
     self.title = @"Courses";
     
     NSURL *url = [NSURL URLWithString:self.url];

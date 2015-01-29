@@ -10,6 +10,8 @@
 #import <HTMLReader/HTMLReader.h>
 #import "ClassInfoMainViewController.h"
 
+
+
 @interface MainTableViewController ()
 
 @end
@@ -23,7 +25,11 @@
     [self.tableView setDelegate:self];
     [self.tableView setDataSource:self];
     
+    
     NSURL *url = [NSURL URLWithString:@"https://duapp2.drexel.edu/webtms_du/app"];
+    
+    
+    
     NSError *error = nil;
     NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
     
@@ -56,6 +62,10 @@
     if (!([[self.classesArray objectAtIndex:0] isEqualToString:@"Add some favorites!"]))
     {
         self.editButton.enabled = YES;
+    }
+    else
+    {
+        self.editButton.enabled = NO;
     }
 
 }
@@ -96,6 +106,8 @@
         cell.detailTextLabel.text = @"";
         cell.accessoryType = NO;
         cell.userInteractionEnabled = NO;
+        cell.editing = NO;
+        //cell.editingAccessoryType = UITableViewCellEditingStyleNone;
     }
     else
     {
@@ -160,6 +172,7 @@
         // If the tableView is already in edit mode, turn it off. Also change the title of the button to reflect the intended verb (‘Edit’, in this case).
         [self.tableView setEditing:NO animated:YES];
         self.editButton.title = @"Edit";
+        
     }
     else
     {
@@ -197,6 +210,7 @@
         {
             self.editButton.enabled = NO;
             self.editButton.title = @"Edit";
+            [self.tableView setEditing:NO animated:YES];
             [self loadData];
         }
     }

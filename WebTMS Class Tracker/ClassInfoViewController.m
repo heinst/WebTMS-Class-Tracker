@@ -20,6 +20,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Course Info";
+    
+    //create a rounded rectangle type button
+    self.trackButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    //set the button size and position
+    self.trackButton.frame = CGRectMake(self.view.frame.size.width/2 - self.trackButton.frame.size.width/2, 525.0 , 41.0, 30.0);
+    
+    //set the button title for the normal state
+    [self.trackButton setTitle:@"Track!"
+                   forState:UIControlStateNormal];
+    //add action to capture the button press down event
+    [self.trackButton addTarget:self
+                      action:@selector(buttonIsPressed:)
+            forControlEvents:UIControlEventTouchDown];
+    //add the button to the view
+    [self.trackButton setTag:1];
+    [self.view addSubview:self.trackButton];
+    
+    //create a rounded rectangle type button
+    self.cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    //set the button size and position
+    self.cancelButton.frame = CGRectMake(self.view.frame.size.width/2 - self.trackButton.frame.size.width/2 - 55.0, 525.0 , 51.0, 30.0);
+    
+    //set the button title for the normal state
+    [self.cancelButton setTitle:@"Cancel"
+                      forState:UIControlStateNormal];
+    //add action to capture the button press down event
+    [self.cancelButton addTarget:self
+                         action:@selector(buttonIsPressed:)
+               forControlEvents:UIControlEventTouchDown];
+    //add the button to the view
+    [self.cancelButton setTag:2];
+    [self.view addSubview:self.cancelButton];
+
+    
     NSURL *url = [NSURL URLWithString:self.url];
     NSError *error = nil;
     NSString *webData= [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:&error];
@@ -220,27 +254,65 @@
     //[self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (IBAction)trackButton:(id)sender
+- (bool)track
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    self.classesArray = [[userDefaults objectForKey:@"classesArray"] mutableCopy];
-    
-    if(self.classesArray == nil)
+    @try
     {
-        self.classesArray = [[NSMutableArray alloc] init];
-        [self.classesArray addObject:self.url];
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        
+        self.classesArray = [[userDefaults objectForKey:@"classesArray"] mutableCopy];
+        
+        if(self.classesArray == nil)
+        {
+            self.classesArray = [[NSMutableArray alloc] init];
+            [self.classesArray addObject:self.url];
+        }
+        else
+        {
+            [self.classesArray addObject:self.url];
+        }
+        
+        [userDefaults setObject:self.classesArray forKey:@"classesArray"];
+        [userDefaults synchronize];
+        
+        return true;
     }
-    else
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception.reason);
+        return false;
+    }
+    
+}
+
+- (void) buttonIsPressed:(UIButton *)paramSender{
+    switch (paramSender.tag)
     {
-        [self.classesArray addObject:self.url];
+        case 1:
+        {
+            bool success = [self track];
+            if (success)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Class Added to List" message:@"The class was added to your tracking list" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+            else
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Favorite Failed" message:@"The class was not added to your list. Please try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+            break;
+        }
+        case 2:
+        {
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            break;
+        }
+        default:
+        {
+            NSLog(@"No idea which Button is pressed down.");
+            break;
+        }
     }
-    
-    [userDefaults setObject:self.classesArray forKey:@"classesArray"];
-    [userDefaults synchronize];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Class Added to List" message:@"The class was added to your tracking list" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex

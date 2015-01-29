@@ -21,8 +21,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height - 64;
+    
+    self.subjectTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 64.0, screenWidth, screenHeight) style:UITableViewStylePlain];
+    
     [self.subjectTable setDelegate:self];
     [self.subjectTable setDataSource:self];
+    
+    [self.view addSubview:self.subjectTable];
     
     NSURL *url = [NSURL URLWithString:self.url];
     NSError *error = nil;

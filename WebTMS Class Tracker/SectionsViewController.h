@@ -10,7 +10,7 @@
 
 @interface SectionsViewController : ViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *sectionsTable;
+@property (strong, nonatomic) IBOutlet UITableView *sectionsTable;
 
 @property (strong, nonatomic) NSString *url;
 @property (strong, nonatomic) NSString *section;

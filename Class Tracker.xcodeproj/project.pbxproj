@@ -14,11 +14,11 @@
 		692CD92C1A095BC800400297 /* ClassInfoMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 692CD92B1A095BC800400297 /* ClassInfoMainViewController.m */; };
 		6946AF2E1A01A22E00C9B46C /* ClassInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6946AF2D1A01A22E00C9B46C /* ClassInfoViewController.m */; };
 		6947BC0119EF65F100469515 /* TermsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6947BC0019EF65F100469515 /* TermsViewController.m */; };
+		6958E11B1A7AF2700000A013 /* libPods-WebTMS Class Tracker-HTMLReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6958E11A1A7AF2700000A013 /* libPods-WebTMS Class Tracker-HTMLReader.a */; };
+		6958E11D1A7AF2750000A013 /* libPods-WebTMS Class Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6958E11C1A7AF2750000A013 /* libPods-WebTMS Class Tracker.a */; };
 		6962F38C19F0C7C60045E464 /* CollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6962F38B19F0C7C60045E464 /* CollegeViewController.m */; };
 		697D06B11A0931F000A99210 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697D06B01A0931EF00A99210 /* MainViewController.m */; };
 		697D06B61A09340C00A99210 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 697D06B51A09340C00A99210 /* ViewController.m */; };
-		69C276DE1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C276DD1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a */; };
-		69C276E01A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C276DF1A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a */; };
 		69FB8A3A19EF5F4A00DC02DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3919EF5F4A00DC02DD /* main.m */; };
 		69FB8A3D19EF5F4A00DC02DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FB8A3C19EF5F4A00DC02DD /* AppDelegate.m */; };
 		69FB8A4319EF5F4A00DC02DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69FB8A4119EF5F4A00DC02DD /* Main.storyboard */; };
@@ -57,6 +57,8 @@
 		6946AF2D1A01A22E00C9B46C /* ClassInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfoViewController.m; sourceTree = "<group>"; };
 		6947BBFF19EF65F100469515 /* TermsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsViewController.h; sourceTree = "<group>"; };
 		6947BC0019EF65F100469515 /* TermsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsViewController.m; sourceTree = "<group>"; };
+		6958E11A1A7AF2700000A013 /* libPods-WebTMS Class Tracker-HTMLReader.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WebTMS Class Tracker-HTMLReader.a"; path = "Pods/build/Debug-iphoneos/libPods-WebTMS Class Tracker-HTMLReader.a"; sourceTree = "<group>"; };
+		6958E11C1A7AF2750000A013 /* libPods-WebTMS Class Tracker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WebTMS Class Tracker.a"; path = "Pods/build/Debug-iphoneos/libPods-WebTMS Class Tracker.a"; sourceTree = "<group>"; };
 		6962F38819F0C24F0045E464 /* Class Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Class Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6962F38919F0C24F0045E464 /* Class TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Class TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6962F38A19F0C7C60045E464 /* CollegeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeViewController.h; sourceTree = "<group>"; };
@@ -83,8 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69C276E01A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a in Frameworks */,
-				69C276DE1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a in Frameworks */,
+				6958E11D1A7AF2750000A013 /* libPods-WebTMS Class Tracker.a in Frameworks */,
+				6958E11B1A7AF2700000A013 /* libPods-WebTMS Class Tracker-HTMLReader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +182,8 @@
 		72BB421423017F38D4711B33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6958E11C1A7AF2750000A013 /* libPods-WebTMS Class Tracker.a */,
+				6958E11A1A7AF2700000A013 /* libPods-WebTMS Class Tracker-HTMLReader.a */,
 				69C276DF1A1ABF0F00A4B961 /* libPods-WebTMS Class Tracker.a */,
 				69C276DD1A1ABF0B00A4B961 /* libPods-WebTMS Class Tracker-HTMLReader.a */,
 				691DEBF81A0983F100289141 /* libPods-WebTMS Class Tracker-HTMLReader.a */,
@@ -455,11 +459,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WebTMS Class Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Class Tracker";
 				PROVISIONING_PROFILE = "";
 			};
@@ -473,11 +475,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "WebTMS Class Tracker/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "Class Tracker";
 				PROVISIONING_PROFILE = "";
 			};

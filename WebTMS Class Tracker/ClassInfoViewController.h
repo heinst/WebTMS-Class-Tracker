@@ -21,11 +21,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *classComments;
 @property (weak, nonatomic) IBOutlet UILabel *classTime;
 @property (weak, nonatomic) IBOutlet UILabel *finalTime;
+@property (nonatomic, strong) UIButton *trackButton;
+@property (nonatomic, strong) UIButton *cancelButton;
 
 @property (strong, nonatomic) NSMutableArray *classesArray;
 
 - (IBAction)cancelButton:(id)sender;
-- (IBAction)trackButton:(id)sender;
+
 
 @property (strong, nonatomic) NSString *url;
 @end

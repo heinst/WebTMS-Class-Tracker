@@ -10,6 +10,10 @@
 #import "CollegeViewController.h"
 #import <HTMLReader/HTMLReader.h>
 
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define IS_IPHONE_6 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)667) < DBL_EPSILON)
+#define IS_IPHONE_6_PLUS (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)736) < DBL_EPSILON)
+
 @interface ClassViewController ()
 
 @end
@@ -19,9 +23,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height - 64;
+        
+    self.termsTable = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 64.0, screenWidth, screenHeight) style:UITableViewStylePlain];
+
     [self.termsTable setDelegate:self];
     [self.termsTable setDataSource:self];
+    
+    [self.view addSubview:self.termsTable];
+    
+    //CGRect tableFrame = [self.termsTable frame];
+    //CGRect screenRect = [[UIScreen mainScreen] bounds];
+    //CGFloat screenWidth = screenRect.size.width;
+    //CGFloat screenHeight = screenRect.size.height;
+    
     
     NSURL *url = [NSURL URLWithString:@"https://duapp2.drexel.edu/webtms_du/app"];
     NSError *error = nil;
