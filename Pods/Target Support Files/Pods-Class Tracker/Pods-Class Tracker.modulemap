@@ -1,0 +1,6 @@
+framework module Pods_Class_Tracker {
+  umbrella header "Pods-Class Tracker-umbrella.h"
+
+  export *
+  module * { export * }
+}
