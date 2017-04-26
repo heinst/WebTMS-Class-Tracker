@@ -1,16 +1,18 @@
 PODS:
-  - Alamofire (3.1.4)
-  - AsyncSwift (1.6.4)
-  - Kanna (1.0.3)
+  - Alamofire (4.4.0)
+  - AsyncSwift (2.0.1)
+  - Kanna (2.2.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.1.4)
-  - AsyncSwift (~> 1.6)
-  - Kanna (~> 1.0.0)
+  - Alamofire
+  - AsyncSwift
+  - Kanna
 
 SPEC CHECKSUMS:
-  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
-  AsyncSwift: 3c90beed237324f1b57e1f1c414dc5501985d208
-  Kanna: 10c7f20762846e808ec5716e4191427bd71bf1c2
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
+  Kanna: 182789ab065e8f9a6ccc2a74ce6283d3401c0c4a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 8166dca3c016f76fda50f5a9c14a181be8c4107b
+
+COCOAPODS: 1.2.0

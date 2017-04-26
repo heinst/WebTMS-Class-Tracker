@@ -8,13 +8,13 @@
 
 import UIKit
 import Kanna
+import Alamofire
 
 class ClassesTableViewController: UITableViewController {
 
-    var classes = [String]()
-    var urls = [String]()
-    var selectedUrl = ""
     var urlString:String!
+    var classes = [String: NSMutableArray]()
+    var classNames: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,29 +24,31 @@ class ClassesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        ////*[local-name() = "tr" and @class="even" or @class="odd"]
         
-        var subjCode = [String]()
-        var courseNumber = [String]()
-        var sections = [String]()
-        
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string: urlString)
-        let request = NSURLRequest(URL: url!)
-        let dataTask = session.dataTaskWithRequest(request) { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in
-            
-            if let doc = Kanna.HTML(html: data!, encoding: NSUTF8StringEncoding) {
-                
-                subjCode = self.parseColumnFromHtml(2, doc: doc)
-                
-                self.tableView.reloadData()
+        let queue = DispatchQueue(label: "com.cnoon.response-queue", qos: .utility, attributes: [.concurrent])
+        Alamofire.request(urlString)
+            .response(
+                queue: queue,
+                responseSerializer: DataRequest.stringResponseSerializer(encoding: String.Encoding.utf8),
+                completionHandler: { response in
+                    // You are now running on the concurrent `queue` you created earlier.
+                    
+                    // Validate your JSON response and convert into model objects if necessary
+                    if let doc = Kanna.HTML(html: response.result.value!, encoding: String.Encoding.utf8) {
+                        
+                        self.classes = self.parseColumnFromHtml(doc: doc)
+                        
+                        self.classNames = [String] (self.classes.keys).sorted()
+                        
+                        self.tableView.reloadData()
+                    }
+                    
+                    // To update anything on the main thread, just jump back on like so.
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
             }
-            
-            print(subjCode)
-            
-            
-        }
-        dataTask.resume()
+        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,53 +56,51 @@ class ClassesTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func parseColumnFromHtml(columnNumber: Int, doc: HTMLDocument) -> [String]
+    func parseColumnFromHtml(doc: HTMLDocument) -> [String: NSMutableArray]
     {
-        var temp = [String]()
-        var index = 0
-        for item in doc.xpath("//*[local-name() = \"tr\" and @class=\"even\" or @class=\"odd\"]/td[@valign=\"center\"]"){
-            if (index % columnNumber == 0)
-            {
-                temp.append(item.text!)
-            }
-            index += 1
+        var classesDict = [String: NSMutableArray]()
+        for tr in doc.xpath("//*[local-name()=\"tr\" and @class=\"tableHeader\"]/following-sibling::tr[position() < last()]") {
+            var tempDict = [String: ClassModel]()
+            let trs = tr.xpath(".//td")
             
+            //12 if final scheduled, 10 if no final scheduled
+            var instructorIndex = 12
+            if trs.count == 11 {
+                instructorIndex = 10
+            }
+            
+            if let classArray = classesDict[String(format: "%@ %@", trs[0].text!, trs[1].text!)] {
+                tempDict[trs[5].text!] = ClassModel(course: String(format: "%@ %@", trs[0].text!, trs[1].text!), instrType: trs[2].text!, section: trs[4].text!, crn: trs[5].text!, url: String(format: "https://duapp2.drexel.edu%@", trs[5].xpath(".//p/a/@href")[0].text!), courseTitle: trs[6].text!, meetingTime:  String(format: "%@ %@", trs[8].text!, trs[9].text!), instructor: trs[instructorIndex].text!)
+                classArray.add(tempDict)
+            }
+            else {
+                classesDict[String(format: "%@ %@", trs[0].text!, trs[1].text!)] = NSMutableArray()
+                tempDict[trs[5].text!] = ClassModel(course: String(format: "%@ %@", trs[0].text!, trs[1].text!), instrType: trs[2].text!, section: trs[4].text!, crn: trs[5].text!, url: String(format: "https://duapp2.drexel.edu%@", trs[5].xpath(".//p/a/@href")[0].text!), courseTitle: trs[6].text!, meetingTime:  String(format: "%@ %@", trs[8].text!, trs[9].text!), instructor: trs[instructorIndex].text!)
+                classesDict[String(format: "%@ %@", trs[0].text!, trs[1].text!)]?.add(tempDict)
+            }
         }
-        return temp
+        return classesDict
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return classes.keys.count
     }
     
-    func backgroundThread(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
-        dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-            if(background != nil){ background!(); }
-            
-            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC)))
-            dispatch_after(popTime, dispatch_get_main_queue()) {
-                if(completion != nil){ completion!(); }
-            }
-        }
-    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath as IndexPath)
+        
+        cell.textLabel!.text = self.classNames[indexPath.row]
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

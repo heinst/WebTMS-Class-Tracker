@@ -5,9 +5,8 @@ use_frameworks!
 
 target 'Class Tracker' do
 
-pod 'Kanna', '~> 1.0.0'
-pod 'Alamofire', '~> 3.1.4'
-pod 'AsyncSwift', '~> 1.6'
+pod 'Kanna'
+pod 'Alamofire'
+pod 'AsyncSwift'
 
 end
-

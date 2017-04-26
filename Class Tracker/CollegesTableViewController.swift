@@ -8,6 +8,7 @@
 
 import UIKit
 import Kanna
+import Alamofire
 
 class CollegesTableViewController: UITableViewController {
     
@@ -24,25 +25,33 @@ class CollegesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string: urlString)
-        let request = NSURLRequest(URL: url!)
-        let dataTask = session.dataTaskWithRequest(request) { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in
-            
-            if let doc = Kanna.HTML(html: data!, encoding: NSUTF8StringEncoding) {
-                
-                // Search for nodes by XPath
-                for term in doc.xpath("//*[local-name()='div' and @id='sideLeft']//*[local-name()='a']") {
-                    self.colleges.append(term.text!)
-                    self.urls.append("https://duapp2.drexel.edu" + term["href"]!)
+        
+        let queue = DispatchQueue(label: "com.cnoon.response-queue", qos: .utility, attributes: [.concurrent])
+        
+        Alamofire.request(urlString)
+            .response(
+                queue: queue,
+                responseSerializer: DataRequest.stringResponseSerializer(encoding: String.Encoding.utf8),
+                completionHandler: { response in
+                    // You are now running on the concurrent `queue` you created earlier.
                     
-                }
-                self.tableView.reloadData()
+                    // Validate your JSON response and convert into model objects if necessary
+                    if let doc = Kanna.HTML(html: response.result.value!, encoding: String.Encoding.utf8) {
+                        
+                        // Search for nodes by XPath
+                        for term in doc.xpath("//*[local-name()='div' and @id='sideLeft']//*[local-name()='a']") {
+                            self.colleges.append(term.text!)
+                            self.urls.append("https://duapp2.drexel.edu" + term["href"]!)
+                            
+                        }
+                    }
+                    
+                    // To update anything on the main thread, just jump back on like so.
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
             }
-            
-            
-        }
-        dataTask.resume()
+        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,18 +61,18 @@ class CollegesTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return colleges.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BasicCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BasicCell", for: indexPath)
         
         cell.textLabel!.text = colleges[indexPath.row]
         
@@ -105,23 +114,23 @@ class CollegesTableViewController: UITableViewController {
     }
     */
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         selectedUrl = urls[indexPath.row]
-        self.performSegueWithIdentifier("SubjectsStoryboardSegue", sender: self)
+        self.performSegue(withIdentifier: "SubjectsStoryboardSegue", sender: self)
     }
     
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "SubjectsStoryboardSegue"
         {
-            let svc = segue.destinationViewController as! SubjectsTableViewController;
+            let svc = segue.destination as! SubjectsTableViewController;
             svc.urlString = self.selectedUrl
         }
     }
